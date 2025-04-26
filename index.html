@@ -1,0 +1,42 @@
+<?php  
+  
+  
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {  
+    $gateWidth = $_POST['gateWidth'];  
+    $waterHeight = $_POST['waterHeight'];  
+      
+    $flowRate = $gateWidth * $waterHeight * 9.81; // Flow rate (in cubic meters per second)  
+      
+    echo "<h2>: " . round($flowRate, 2) . " metros cubicos por segundo</h2>";  
+}  
+?>  
+  
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Water Flow Calculator</title>  
+    <style>  
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }  
+        form { max-width: 300px; margin: auto; background: white; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }  
+        input[type="text"] { width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; }  
+        input[type="submit"] { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; }  
+        input[type="submit"]:hover { background-color: #45a049; }  
+        h1 { text-align: center; }  
+        h2 { text-align: center; color: #333; }  
+    </style>  
+</head>  
+<body>  
+    <h1>Calculadora de Flujo de agua</h1>  
+    <form method="post">  
+        <label for="gateWidth">Tamaño de la Compuerta (m):</label>  
+        <input type="text" id="gateWidth" name="gateWidth" required>  
+        <label for="waterHeight">Altura de la compuerta(m):</label>  
+        <input type="text" id="waterHeight" name="waterHeight" required>  
+        <h4>profe esta es la primera version y le falta muchisimo, gracias por su comprencion</h4>
+        <input type="submit" value="Calculate">  
+    </form>  
+</body>  
+</html>  
