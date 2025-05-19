@@ -791,6 +791,7 @@
                 };
                 saveToHistory(entry);
             }
+            
         });
     </script>
 </body>
